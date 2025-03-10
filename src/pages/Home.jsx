@@ -53,7 +53,24 @@ export default function Home() {
       },
       country: 'Turkey'
     },
+
+    {
+      _id: '5',
+      image: {
+        src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/561382832.jpg?k=a9d2305434886d793077316503553e9da4d732c8631a3cbcdbc6f1a97f8a5ada&o=&hp=1'
+      },
+      link: {
+        href: '/',
+        label: 'Hanioti 2'
+      },
+      country: 'Greece'
+    }
   ]
+
+  const[itemsPerPage, setItemsPerPage] = useState(2)
+  
+  //state za pracenje trenutne stranice
+  const [currentPage, setCurrentPage] = useState(1);
 
   //setuje vrednost iz FilterCountry komponente 
   const [filterCountry, setFilterCountry] = useState('All');
@@ -61,10 +78,20 @@ export default function Home() {
   //setuje onu vrednost koju smo odabrali na dugmicima
   const handleChangeFilter = (value) => {
     setFilterCountry(value)
+    setCurrentPage(1)
   }
 
   //ona ih filterise tj. prikazuje ih
   const filteredVacations = filterCountry === 'All' ? vacations : vacations.filter(({country}) => country === filterCountry)
+
+  
+  const totalPages = Math.ceil(filteredVacations.length / itemsPerPage);
+  const currentVacations = filteredVacations.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+
 
   return (
     <div>
@@ -76,10 +103,23 @@ export default function Home() {
       <FilterCountry data={vacations} handleChangeFilter={handleChangeFilter} />
 
       <div className='displayF'>
-        {filteredVacations.map((vacation) => {
+        {currentVacations.map((vacation) => {
           return <VacationCard key={vacation._id} {...vacation} />
         })}
       </div>
+      
+      <div className='pagination'>
+
+        <select value={itemsPerPage} onChange={(event) => setItemsPerPage(event.target.value)}>
+          {[1,2,3].map((item) => {
+            return <option key={item} value={item}>{item}</option>
+          })}
+        </select>
+        <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>Previous</button>
+        <span>{currentPage} / {totalPages}</span>
+        <button onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>Next</button>
+      </div>
+
     </div>
   )
 }
@@ -104,7 +144,7 @@ function FilterCountry({data, handleChangeFilter}) {
   const countries = getUniqueCountries();
 
   return (
-    <div>
+    <div className='buttonCenter'>
       {countries.map((country) => {
         return (
           <button type='button' key={country} onClick={ () => handleChangeFilter(country)}>{country}</button> 

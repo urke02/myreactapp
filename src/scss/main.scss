@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+// Layout
+@use 'layout/navbar';
+@use 'layout/footer';
+
+// Pages
+@use 'pages/home';
+@use 'pages/register';
+@use 'pages/contact-us';
+@use 'pages/about-us';
