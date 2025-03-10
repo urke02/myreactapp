@@ -2,13 +2,12 @@ import React from 'react'
 
 export default function Register() {
   return (
-    <div>
-      <div>
-        <h1 className='headingText'>Register</h1>
-      </div>
-      <div>
-        <form method='post' className='forma'>
-
+    <section className='section py-12'>
+      <div className='container'>
+        <h1 className='h1'>Register</h1>
+        
+        <div>
+          <form method='post' className='forma'>
             <label for='firstName'>First Name:</label><br/>
             <input type='text' id='firstName' name='firstName' placeholder='write your first name'/><br/>
             
@@ -27,9 +26,9 @@ export default function Register() {
             <label>Prevoz:</label><br/>
             <input type='radio' id='sopstveniPrevoz' name='gender'/><label for='sopstveniPrevoz'>sopstveni prevoz</label><br/>
             <input type='radio' id='autobus' name='gender'/><label for='autobus'>autobus</label><br/>
-
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }

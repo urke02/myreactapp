@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+.footer{
+  padding-block: var(--gutter-8);
+  background-color: #333;
+  justify-content: center;
+
+  p {
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+  }
+}

@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+:root {
+  --bgColor: rgb(245,245,245); 
+
+  --bg-teal-100: #e0f2f1; // Lightest teal
+  --bg-teal-200: #b2dfdb;
+  --bg-teal-300: #80cbc4;
+  --bg-teal-400: #4db6ac;
+  --bg-teal-500: #26a69a; // Default teal
+  --bg-teal-600: #009688;
+  --bg-teal-700: #00897b;
+  --bg-teal-800: #00796b;
+  --bg-teal-900: #00695c; // Darkest teal
+
+  --gutter: 4px;
+
+  --gutter-1: calc(var(--gutter) * 1); // 4px 
+  --gutter-2: calc(var(--gutter) * 2); // 8px
+  --gutter-3: calc(var(--gutter) * 3); // 12px
+  --gutter-4: calc(var(--gutter) * 4); // 16px
+  --gutter-5: calc(var(--gutter) * 5); 
+  --gutter-6: calc(var(--gutter) * 6); 
+  --gutter-7: calc(var(--gutter) * 7); 
+  --gutter-8: calc(var(--gutter) * 8); 
+  --gutter-9: calc(var(--gutter) * 9); 
+  --gutter-10: calc(var(--gutter) * 10); 
+  --gutter-11: calc(var(--gutter) * 11); 
+  --gutter-12: calc(var(--gutter) * 12); 
+}

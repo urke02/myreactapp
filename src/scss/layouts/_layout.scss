@@ -1,0 +1,8 @@
+@charset 'utf-8';
+
+.app__layout {
+  display: grid;
+  min-height: 100svh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr; 
+}

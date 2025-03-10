@@ -1,0 +1,12 @@
+@charset 'utf-8';
+
+
+@mixin generate-bg-classes($color-prefix) {
+  @for $i from 100 through 900 {
+    .#{$color-prefix}-#{$i} {
+      background-color: var(--#{$color-prefix}-#{$i});
+    }
+  }
+}
+
+@include generate-bg-classes('bg-teal');

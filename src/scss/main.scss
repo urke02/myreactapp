@@ -1,11 +1,9 @@
 @charset 'utf-8';
 
-// Layout
-@use 'layout/navbar';
-@use 'layout/footer';
+@use 'abstracts';
 
-// Pages
-@use 'pages/home';
-@use 'pages/register';
-@use 'pages/contact-us';
-@use 'pages/about-us';
+@use 'base';
+
+@use 'layouts';
+
+@use 'components';

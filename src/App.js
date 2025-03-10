@@ -1,22 +1,28 @@
 import './App.css';
 import Home from '../src/pages/Home'
-import Register from '../src/pages/Register'
-import AboutUs from '../src/pages/AboutUs'
-import ContactUs from'../src/pages/ContactUs'
+import AboutUs from '../src/pages/about-us/AboutUs'
+import ContactUs from'./pages/contact-us/ContactUs'
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+import Register from './pages/auth/register/Register'
+import Login from './pages/auth/login/Login';
 
 function App() {
   return (
-    <div>
+    <div className='app__layout'>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='register' element={<Register/>}/>
-        <Route path='about-us' element={<AboutUs/>}/>
-        <Route path='contact-us' element={<ContactUs/>}/>
-      </Routes>
+      
+      <main className='main' role='main'>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='register' element={<Register/>}/>
+          <Route path='login' element={<Login/>}/>
+          <Route path='about-us' element={<AboutUs/>}/>
+          <Route path='contact-us' element={<ContactUs/>}/>
+        </Routes>
+      </main>
+
       <Footer />
     </div> 
   );

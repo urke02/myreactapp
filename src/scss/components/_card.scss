@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+.card {
+  position: relative;
+
+  &-link {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--gutter-6);
+    backdrop-filter: blur(4px);
+    background-color: rgba(0,0,0,.3);
+  }
+}
