@@ -1,4 +1,3 @@
-import './App.css';
 import Home from '../src/pages/Home'
 import AboutUs from '../src/pages/about-us/AboutUs'
 import ContactUs from'./pages/contact-us/ContactUs'
